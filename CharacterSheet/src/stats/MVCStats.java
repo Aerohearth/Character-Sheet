@@ -1,10 +1,10 @@
 package stats;
 
 public class MVCStats {
+	static StatsView theView = new StatsView();
 	
 	public static void main(String[] args) {
 		
-		StatsView theView = new StatsView();
 		
 		StatsModel theModel = new StatsModel();
 		

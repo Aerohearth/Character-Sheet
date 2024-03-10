@@ -13,7 +13,7 @@ public class StatsController {
 		this.TheView = TheView;
 		this.TheModel = TheModel;
 		
-		this.TheView.addStatsListener(new StatsListener());
+		this.TheView.addButtonListener(new StatsListener());
 	}
 
 	

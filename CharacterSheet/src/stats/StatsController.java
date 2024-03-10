@@ -3,6 +3,8 @@ package stats;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JFrame;
+
 public class StatsController {
 	
 	private StatsView TheView;
@@ -13,11 +15,11 @@ public class StatsController {
 		this.TheView = TheView;
 		this.TheModel = TheModel;
 		
-		this.TheView.addButtonListener(new StatsListener());
+		this.TheView.addButtonListener(new ButtonListener());
 	}
 
 	
-	class StatsListener implements ActionListener {
+	class ButtonListener implements ActionListener {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
@@ -44,4 +46,6 @@ public class StatsController {
 		}
 		
 	}
+	
+	
 }

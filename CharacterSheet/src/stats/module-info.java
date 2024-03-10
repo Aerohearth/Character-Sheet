@@ -1,0 +1,11 @@
+/**
+ * 
+ */
+/**
+ * 
+ */
+package stats;
+
+
+module CharacterSheet {
+}

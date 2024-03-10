@@ -7,5 +7,5 @@
 package stats;
 
 
-module CharacterSheet {
+class CharacterSheet {
 }

@@ -1,5 +1,6 @@
 package stats;
 
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 
@@ -7,6 +8,7 @@ public class StatsView extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	
+	private JPanel StatsPanel = new JPanel(); 
 	private JLabel EnduranceLabel = new JLabel("Endurance:");
 	private JTextField Endurance = new JTextField(10);
 	private JLabel StrengthLabel = new JLabel("Strength:");
@@ -20,8 +22,13 @@ public class StatsView extends JFrame {
 	private JTextField NewStrength = new JTextField(10);
 	private JTextField NewSpeed = new JTextField(10);
 	private JTextField NewIntelligence = new JTextField(10);
+	//Stats Panel variables
 	
-	//private JFrame statsframe = new JFrame();
+	private JPanel GuidePanel = new JPanel();
+	private JLabel AttributesGuideLabel = new JLabel("Attributes Guide:");
+	private JLabel StrengthGuide = new JLabel("Strength:\n"
+			+ "1: Unable to lift 5 lbs.\n"
+			+ "10: Able to lift 200+ lbs.");
 	
 	StatsView(){
 		
@@ -29,24 +36,31 @@ public class StatsView extends JFrame {
 		this.setSize(600, 200);
 		// Set JFrame size and close parameters
 		
+		setJMenuBar();
+		// add Our Menu Bar to JFrame
+		
 		createStatsPanel();
 		// set and create the Panel that shows our statistics
 		
-		setJMenuBar();
-		// add Our Menu Bar to JFrame
+		createGuidePanel();
+		// set and create the Panel that shows the Guide 
+		
 	}
 	
 	public void setJMenuBar() {
 		JMenuBar menuBar  = new JMenuBar();
 			JMenu sheetMenu = new JMenu("Menu");
+			MenuHandler mh = new MenuHandler(MVCStats.theView);
 		 
 			JMenuItem item;
 		   
 			item = new JMenuItem("Stats");
+			item.addActionListener(mh);
 			sheetMenu.add(item);
 			sheetMenu.addSeparator();
 		   
-			item = new JMenuItem("Guide"); 
+			item = new JMenuItem("Guide");
+			item.addActionListener(mh);
 			sheetMenu.add(item);
 		   
 		   menuBar.add(sheetMenu);
@@ -54,7 +68,7 @@ public class StatsView extends JFrame {
 	}
 	
 	public void createStatsPanel() {
-		JPanel StatsPanel = new JPanel(); 
+		//JPanel StatsPanel = new JPanel(); 
 		// make Panel
 		
 		StatsPanel.add(EnduranceLabel);
@@ -77,7 +91,46 @@ public class StatsView extends JFrame {
 	}
 	
 	public void createGuidePanel() {
+		//JPanel GuidePanel = new JPanel();
+		// make Panel
 		
+		GuidePanel.add(AttributesGuideLabel);
+		GuidePanel.add(StrengthGuide);
+		// add all our JComponents to the Panel
+		
+		//this.add(GuidePanel);
+		// add Panel to JFrame
+	}
+	
+	class MenuHandler implements ActionListener {
+		JFrame jframe;
+		public MenuHandler(JFrame jf){
+			jframe = jf;
+		}
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			String menuName;
+			menuName = e.getActionCommand();
+			if (menuName.equals("Stats")) {
+				setStatsPanel();
+				jframe.repaint();
+				jframe.revalidate();
+			}
+			else if (menuName.equals("Guide")) {
+				setGuidePanel();
+				jframe.repaint();
+				jframe.revalidate();
+			}
+		
+		}
+	}
+	
+	public void setStatsPanel() {
+		this.setContentPane(StatsPanel);
+	}
+	
+	public void setGuidePanel() {
+		this.setContentPane(GuidePanel);
 	}
 	
 	public int getEndurance() {

@@ -25,7 +25,7 @@ public class StatsView extends JFrame {
 	//Stats Panel variables
 	
 	private JPanel GuidePanel = new JPanel();
-	private JLabel AttributesGuideLabel = new JLabel("Attributes Guide:");
+	private JLabel AttributesGuideLabel = new JLabel("Attributes Guide:\n");
 	private JLabel StrengthGuide = new JLabel("Strength:\n"
 			+ "1: Unable to lift 5 lbs.\n"
 			+ "10: Able to lift 200+ lbs.");
@@ -52,7 +52,7 @@ public class StatsView extends JFrame {
 	public void setJMenuBar() {
 		JMenuBar menuBar  = new JMenuBar();
 			JMenu sheetMenu = new JMenu("Menu");
-			MenuHandler mh = new MenuHandler(MVCStats.theView);
+			MenuHandler mh = new MenuHandler();
 		 
 			JMenuItem item;
 		   
@@ -87,9 +87,6 @@ public class StatsView extends JFrame {
 		StatsPanel.add(NewSpeed);
 		StatsPanel.add(NewIntelligence);
 		// add all our JComponents to the Panel
-		
-		//this.add(StatsPanel);
-		// add Panel to JFrame
 	}
 	
 	public void createGuidePanel() {
@@ -99,29 +96,18 @@ public class StatsView extends JFrame {
 		GuidePanel.add(AttributesGuideLabel);
 		GuidePanel.add(StrengthGuide);
 		// add all our JComponents to the Panel
-		
-		//this.add(GuidePanel);
-		// add Panel to JFrame
 	}
 	
 	class MenuHandler implements ActionListener {
-		JFrame jframe;
-		public MenuHandler(JFrame jf){
-			jframe = jf;
-		}
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			String menuName;
 			menuName = e.getActionCommand();
 			if (menuName.equals("Stats")) {
 				setStatsPanel();
-				jframe.repaint();
-				jframe.revalidate();
 			}
 			else if (menuName.equals("Guide")) {
 				setGuidePanel();
-				jframe.repaint();
-				jframe.revalidate();
 			}
 		
 		}

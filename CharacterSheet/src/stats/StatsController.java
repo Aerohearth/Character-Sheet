@@ -46,21 +46,4 @@ public class StatsController {
 		}
 		
 	}
-	
-	class MenuHandler implements ActionListener {
-		JFrame jframe;
-		public MenuHandler(JFrame jf){
-			jframe = jf;
-		}
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			String menuName;
-			menuName = e.getActionCommand();
-			if (menuName.equals("Stats"))
-				TheView.setStatsPanel();
-			else if (menuName.equals("Guide"))
-				TheView.setGuidePanel();
-		
-		}
-	}
 }

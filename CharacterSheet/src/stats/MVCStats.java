@@ -14,6 +14,5 @@ public class MVCStats {
 	}
 
 }
-/* we can set it up so we ask general questions for each added skill to determine our proficiency in it, we can also set a benchmark 
- * feat/test we can use to determine our stats in strength,speed, intelligence, etc
- */
+
+ 

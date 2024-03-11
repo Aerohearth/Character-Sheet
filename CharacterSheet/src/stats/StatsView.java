@@ -45,6 +45,8 @@ public class StatsView extends JFrame {
 		createGuidePanel();
 		// set and create the Panel that shows the Guide 
 		
+		setStatsPanel();
+		// set the stats Panel as the first thing that pops up
 	}
 	
 	public void setJMenuBar() {
@@ -86,7 +88,7 @@ public class StatsView extends JFrame {
 		StatsPanel.add(NewIntelligence);
 		// add all our JComponents to the Panel
 		
-		this.add(StatsPanel);
+		//this.add(StatsPanel);
 		// add Panel to JFrame
 	}
 	
@@ -127,10 +129,14 @@ public class StatsView extends JFrame {
 	
 	public void setStatsPanel() {
 		this.setContentPane(StatsPanel);
+		this.StatsPanel.setVisible(true);
+		this.GuidePanel.setVisible(false);
 	}
 	
 	public void setGuidePanel() {
 		this.setContentPane(GuidePanel);
+		this.GuidePanel.setVisible(true);
+		this.StatsPanel.setVisible(false);
 	}
 	
 	public int getEndurance() {

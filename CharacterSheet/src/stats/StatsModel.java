@@ -1,5 +1,11 @@
 package stats;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+
 public class StatsModel {
 	private int Endurance, Strength, Speed, Intelligence, Charisma, Wisdom, Dexterity, Constitution, Perception; //, Speed, Intelligence, MentalStrength, MentalEndurance;
 
@@ -17,6 +23,41 @@ public class StatsModel {
 		this.Constitution = Constitution+=1;
 		this.Perception = Perception+=1;
 		
+	}
+	
+	public void Save(String filename) {
+		try(PrintWriter writer = new PrintWriter(new FileWriter(filename))) {
+			writer.println(Endurance);
+			writer.println(Strength);
+			writer.println(Speed);
+			writer.println(Intelligence);
+			writer.println(Charisma);
+			writer.println(Wisdom);
+			writer.println(Dexterity);
+			writer.println(Constitution);
+			writer.println(Perception);
+		}
+		catch (IOException e) {
+			System.err.println("Error saving fiel: " + e.getMessage());
+		}
+	}
+	
+	public void Load(String filename) {
+		try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
+			//String name = reader.readLine();
+			Endurance = Integer.parseInt(reader.readLine());
+			Strength = Integer.parseInt(reader.readLine());
+			Speed = Integer.parseInt(reader.readLine());
+			Intelligence = Integer.parseInt(reader.readLine());
+			Charisma = Integer.parseInt(reader.readLine());
+			Wisdom = Integer.parseInt(reader.readLine());
+			Dexterity = Integer.parseInt(reader.readLine());
+			Constitution = Integer.parseInt(reader.readLine());
+			Perception = Integer.parseInt(reader.readLine());
+		}
+		catch (IOException | NumberFormatException e) {
+            System.err.println("Error loading file: " + e.getMessage());
+        }
 	}
 	
 	public int getEndurance() {return Endurance;}

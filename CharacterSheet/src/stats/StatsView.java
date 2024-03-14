@@ -13,45 +13,47 @@ public class StatsView extends JFrame {
 	
 	private JLabel AttributesLabel = new JLabel("Attributes:");
 	private JLabel AttributeLevelLabel = new JLabel("Level:");
-	private JLabel NewAttributeLevelLabel = new JLabel("New Level:");
+	//private JLabel NewAttributeLevelLabel = new JLabel("New Level:");
 	
 	private JLabel EnduranceLabel = new JLabel("Endurance:");
 	private JLabel Endurance = new JLabel("1");
 	//private JTextField NewEndurance = new JTextField(10); Might use for "/10
 	
 	private JLabel StrengthLabel = new JLabel("Strength:");
-	private JTextField Strength = new JTextField(10);
+	private JLabel Strength = new JLabel("1");
 	//private JTextField NewStrength = new JTextField(10);
 	
 	private JLabel AgilityLabel = new JLabel("Agility:");
-	private JTextField Agility = new JTextField(10);
+	private JLabel Agility = new JLabel("1");
 	//private JTextField NewAgility = new JTextField(10);
 	
 	private JLabel IntelligenceLabel = new JLabel("Intelligence:");
-	private JTextField Intelligence = new JTextField(10);
+	private JLabel Intelligence = new JLabel("1");
 	//private JTextField NewIntelligence = new JTextField(10);
 	
 	private JLabel CharismaLabel = new JLabel("Charisma:");
-	private JTextField Charisma = new JTextField(10);
+	private JLabel Charisma = new JLabel("1");
 	//private JTextField NewCharisma = new JTextField(10);
 	
 	private JLabel WisdomLabel = new JLabel("Wisdom:");
-	private JTextField Wisdom = new JTextField(10);
+	private JLabel Wisdom = new JLabel("1");
 	//private JTextField NewWisdom = new JTextField(10);
 	
 	private JLabel DexterityLabel = new JLabel("Dexterity:");
-	private JTextField Dexterity = new JTextField(10);
+	private JLabel Dexterity = new JLabel("1");
 	//private JTextField NewDexterity = new JTextField(10);
 	
 	private JLabel ConstitutionLabel = new JLabel("Constitution:");
-	private JTextField Constitution = new JTextField(10);
+	private JLabel Constitution = new JLabel("1");
 	//private JTextField NewConstitution = new JTextField(10);
 	
 	private JLabel PerceptionLabel = new JLabel("Perception:");
-	private JTextField Perception = new JTextField(10);
+	private JLabel Perception = new JLabel("1");
 	//private JTextField NewPerception = new JTextField(10);
 	
 	private JButton UpStats = new JButton("Up your Stats!");
+	private JButton SaveStats = new JButton("Save");
+	private JButton LoadStats = new JButton("Load");
 	//Stats Panel variables
 	
 	private JPanel GuidePanel = new JPanel();
@@ -110,7 +112,7 @@ public class StatsView extends JFrame {
 		
 		StatsPanel.add(AttributesLabel);
 		StatsPanel.add(AttributeLevelLabel);
-		StatsPanel.add(NewAttributeLevelLabel);
+		//StatsPanel.add(NewAttributeLevelLabel);
 		StatsPanel.add(EnduranceLabel);
 		StatsPanel.add(Endurance);
 		//StatsPanel.add(NewEndurance);
@@ -139,6 +141,8 @@ public class StatsView extends JFrame {
 		StatsPanel.add(Perception);
 		//StatsPanel.add(NewPerception);
 		StatsPanel.add(UpStats);
+		StatsPanel.add(SaveStats);
+		StatsPanel.add(LoadStats);
 		// add all our JComponents to the Panel
 	}
 	
@@ -255,6 +259,8 @@ public class StatsView extends JFrame {
 	
 	void addButtonListener(ActionListener ListenForUpStatsButton) {
 		UpStats.addActionListener(ListenForUpStatsButton);
+		SaveStats.addActionListener(ListenForUpStatsButton);
+		LoadStats.addActionListener(ListenForUpStatsButton);
 	}
 	
 	void displayErrorMessage(String errorMessage) {

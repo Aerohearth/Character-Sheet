@@ -1,5 +1,6 @@
 package stats;
 
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
@@ -9,6 +10,9 @@ public class StatsView extends JFrame {
 	private static final long serialVersionUID = 1L;
 	
 	private JPanel StatsPanel = new JPanel(); 
+	private JLabel AttributesLabel = new JLabel("Attributes:");
+	private JLabel AttributeLevelLabel = new JLabel("Level:");
+	private JLabel NewAttributeLevelLabel = new JLabel("New Level:");
 	private JLabel EnduranceLabel = new JLabel("Endurance:");
 	private JTextField Endurance = new JTextField(10);
 	private JLabel StrengthLabel = new JLabel("Strength:");
@@ -29,6 +33,7 @@ public class StatsView extends JFrame {
 	private JLabel StrengthGuide = new JLabel("Strength:\n"
 			+ "1: Unable to lift 5 lbs.\n"
 			+ "10: Able to lift 200+ lbs.");
+	//Guide Panel variables
 	
 	StatsView(){
 		
@@ -72,26 +77,36 @@ public class StatsView extends JFrame {
 	public void createStatsPanel() {
 		//JPanel StatsPanel = new JPanel(); 
 		// make Panel
+		GridLayout statsLayout = new GridLayout(0,3);
 		
+		StatsPanel.setLayout(statsLayout);
+		
+		
+		StatsPanel.add(AttributesLabel);
+		StatsPanel.add(AttributeLevelLabel);
+		StatsPanel.add(NewAttributeLevelLabel);
 		StatsPanel.add(EnduranceLabel);
 		StatsPanel.add(Endurance);
+		StatsPanel.add(NewEndurance);
 		StatsPanel.add(StrengthLabel);
 		StatsPanel.add(Strength);
+		StatsPanel.add(NewStrength);
 		StatsPanel.add(SpeedLabel);
 		StatsPanel.add(Speed);
-		StatsPanel.add(IntelligenceLabel);
-		StatsPanel.add(Intelligence);
-		StatsPanel.add(UpStats);
-		StatsPanel.add(NewEndurance);
-		StatsPanel.add(NewStrength);
 		StatsPanel.add(NewSpeed);
+		StatsPanel.add(IntelligenceLabel);
+		StatsPanel.add(Intelligence);	
 		StatsPanel.add(NewIntelligence);
+		StatsPanel.add(UpStats);
 		// add all our JComponents to the Panel
 	}
 	
 	public void createGuidePanel() {
 		//JPanel GuidePanel = new JPanel();
 		// make Panel
+		GridLayout guideLayout = new GridLayout(0,2);
+		
+		GuidePanel.setLayout(guideLayout);
 		
 		GuidePanel.add(AttributesGuideLabel);
 		GuidePanel.add(StrengthGuide);

@@ -10,18 +10,23 @@ public class StatsView extends JFrame {
 	private static final long serialVersionUID = 1L;
 	
 	private JPanel StatsPanel = new JPanel(); 
+	
 	private JLabel AttributesLabel = new JLabel("Attributes:");
 	private JLabel AttributeLevelLabel = new JLabel("Level:");
 	private JLabel NewAttributeLevelLabel = new JLabel("New Level:");
+	
 	private JLabel EnduranceLabel = new JLabel("Endurance:");
 	private JTextField Endurance = new JTextField(10);
 	private JTextField NewEndurance = new JTextField(10);
+	
 	private JLabel StrengthLabel = new JLabel("Strength:");
 	private JTextField Strength = new JTextField(10);
 	private JTextField NewStrength = new JTextField(10);
+	
 	private JLabel AgilityLabel = new JLabel("Agility:");
 	private JTextField Agility = new JTextField(10);
 	private JTextField NewAgility = new JTextField(10);
+	
 	private JLabel IntelligenceLabel = new JLabel("Intelligence:");
 	private JTextField Intelligence = new JTextField(10);
 	private JTextField NewIntelligence = new JTextField(10);

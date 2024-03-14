@@ -57,10 +57,46 @@ public class StatsView extends JFrame {
 	//Stats Panel variables
 	
 	private JPanel GuidePanel = new JPanel();
-	private JLabel AttributesGuideLabel = new JLabel("Attributes Guide:\n");
-	private JLabel StrengthGuide = new JLabel("Strength:\n"
-			+ "1: Unable to lift 5 lbs.\n"
-			+ "10: Able to lift 200+ lbs.");
+	
+	private JLabel AttributesGuideLabel = new JLabel("Attributes Guide:");
+	private JLabel Lvl1Attributes = new JLabel("LVL 1:");
+	private JLabel Lvl10Attributes = new JLabel("LVL 10:");
+	
+	private JLabel EnduranceGuide = new JLabel("Endurance:");
+	private JLabel EnduranceLVL1 = new JLabel("Tires quickly after light physical activity.");
+	private JLabel EnduranceLVL10 = new JLabel("Can maintain physical activity for several hours without tiring.");
+	
+	private JLabel StrengthGuide = new JLabel("Strength:");
+	private JLabel StrengthLVL1 = new JLabel("Unable to lift 5 lbs.");
+	private JLabel StrengthLVL10 = new JLabel("Able to lift 200+ lbs.");
+	
+	private JLabel AgilityGuide = new JLabel("Agility:");
+	private JLabel AgilityLVL1 = new JLabel("Struggles to catch a slow-moving object.");
+	private JLabel AgilityLVL10 = new JLabel("Can easily catch a fast-moving object.");
+	
+	private JLabel IntelligenceGuide = new JLabel("Intelligence:");
+	private JLabel IntelligenceLVL1 = new JLabel("Struggles with basic arithmetic.");
+	private JLabel IntelligenceLVL10 = new JLabel("Solves complex mathematical problems with ease.");
+	
+	private JLabel CharismaGuide = new JLabel("Charisma:");
+	private JLabel CharismaLVL1 = new JLabel("Finds it difficult to make friends or connect with others.");
+	private JLabel CharismaLVL10 = new JLabel("Charms almost everyone they meet.");
+	
+	private JLabel WisdomGuide = new JLabel("Wisdom:");
+	private JLabel WisdomLVL1 = new JLabel("Often makes poor decisions without considering the consequences.");
+	private JLabel WisdomLVL10 = new JLabel("Makes wise decisions consistently, considering long-term effects.");
+	
+	private JLabel DexterityGuide = new JLabel("Dexterity:");
+	private JLabel DexterityLVL1 = new JLabel("Clumsy and frequently drops or spills things.");
+	private JLabel DexterityLVL10 = new JLabel("Extremely precise and coordinated in physical tasks.");
+	
+	private JLabel ConstitutionGuide = new JLabel("Constitution:");
+	private JLabel ConstitutionLVL1 = new JLabel("Prone to illness and fatigue.");
+	private JLabel ConstitutionLVL10 = new JLabel("Rarely gets sick and can endure extreme physical conditions.");
+	
+	private JLabel PerceptionGuide = new JLabel("Perception:");
+	private JLabel PerceptionLVL1 = new JLabel("Often misses important details in their surroundings.");
+	private JLabel PerceptionLVL10 = new JLabel("Notices even the slightest changes or anomalies.");
 	//Guide Panel variables
 	
 	StatsView(){
@@ -149,12 +185,49 @@ public class StatsView extends JFrame {
 	public void createGuidePanel() {
 		//JPanel GuidePanel = new JPanel();
 		// make Panel
-		GridLayout guideLayout = new GridLayout(0,2);
+		GridLayout guideLayout = new GridLayout(0,3);
 		
 		GuidePanel.setLayout(guideLayout);
 		
 		GuidePanel.add(AttributesGuideLabel);
+		GuidePanel.add(Lvl1Attributes);
+		GuidePanel.add(Lvl10Attributes);
+		
+		GuidePanel.add(EnduranceGuide);
+		GuidePanel.add(EnduranceLVL1);
+		GuidePanel.add(EnduranceLVL10);
+		
 		GuidePanel.add(StrengthGuide);
+		GuidePanel.add(StrengthLVL1);
+		GuidePanel.add(StrengthLVL10);
+		
+		GuidePanel.add(AgilityGuide);
+		GuidePanel.add(AgilityLVL1);
+		GuidePanel.add(AgilityLVL10);
+		
+		GuidePanel.add(IntelligenceGuide);
+		GuidePanel.add(IntelligenceLVL1);
+		GuidePanel.add(IntelligenceLVL10);
+		
+		GuidePanel.add(CharismaGuide);
+		GuidePanel.add(CharismaLVL1);
+		GuidePanel.add(CharismaLVL10);
+		
+		GuidePanel.add(WisdomGuide);
+		GuidePanel.add(WisdomLVL1);
+		GuidePanel.add(WisdomLVL10);
+		
+		GuidePanel.add(DexterityGuide);
+		GuidePanel.add(DexterityLVL1);
+		GuidePanel.add(DexterityLVL10);
+		
+		GuidePanel.add(ConstitutionGuide);
+		GuidePanel.add(ConstitutionLVL1);
+		GuidePanel.add(ConstitutionLVL10);
+		
+		GuidePanel.add(PerceptionGuide);
+		GuidePanel.add(PerceptionLVL1);
+		GuidePanel.add(PerceptionLVL10);
 		// add all our JComponents to the Panel
 	}
 	

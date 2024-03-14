@@ -26,7 +26,6 @@ public class StatsController {
 			
 			int Endurance, Strength, Speed, Intelligence, Charisma, Wisdom, Dexterity, Constituition, Perception;
 			String ButtonName;
-			String Character = JOptionPane.showInputDialog("Enter your character name");
 			ButtonName = e.getActionCommand();
 			if(ButtonName.equals("Up your Stats!")) {
 				try {
@@ -59,6 +58,7 @@ public class StatsController {
 			}
 			else if(ButtonName.equals("Save")) {
 				try {
+					String Character = JOptionPane.showInputDialog("Enter your character name");
 					TheModel.Save(Character + ".txt");
 				}
 				
@@ -70,6 +70,7 @@ public class StatsController {
 			
 			else if(ButtonName.equals("Load")) {
 				try {
+					String Character = JOptionPane.showInputDialog("Enter your character name");
 					TheModel.Load(Character + ".txt");
 					
 					TheView.StatsNewEnduranceSolution(TheModel.getEndurance());

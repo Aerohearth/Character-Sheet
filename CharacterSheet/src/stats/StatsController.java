@@ -3,6 +3,8 @@ package stats;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JOptionPane;
+
 public class StatsController {
 	
 	private StatsView TheView;
@@ -24,6 +26,7 @@ public class StatsController {
 			
 			int Endurance, Strength, Speed, Intelligence, Charisma, Wisdom, Dexterity, Constituition, Perception;
 			String ButtonName;
+			String Character = JOptionPane.showInputDialog("Enter your character name");
 			ButtonName = e.getActionCommand();
 			if(ButtonName.equals("Up your Stats!")) {
 				try {
@@ -56,7 +59,7 @@ public class StatsController {
 			}
 			else if(ButtonName.equals("Save")) {
 				try {
-					TheModel.Save("character.txt");
+					TheModel.Save(Character + ".txt");
 				}
 				
 				catch(NumberFormatException ex) {
@@ -67,7 +70,7 @@ public class StatsController {
 			
 			else if(ButtonName.equals("Load")) {
 				try {
-					TheModel.Save("character.txt");
+					TheModel.Load(Character + ".txt");
 					
 					TheView.StatsNewEnduranceSolution(TheModel.getEndurance());
 					TheView.StatsNewStrengthSolution(TheModel.getStrength());

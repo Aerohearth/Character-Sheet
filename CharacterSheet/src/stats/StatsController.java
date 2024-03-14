@@ -3,8 +3,6 @@ package stats;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JFrame;
-
 public class StatsController {
 	
 	private StatsView TheView;
@@ -24,20 +22,30 @@ public class StatsController {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			
-			int Endurance, Strength, Speed = 0, Intelligence = 0;
+			int Endurance, Strength, Speed, Intelligence, Charisma, Wisdom, Dexterity, Constituition, Perception;
 			
 			try {
 				Endurance = TheView.getEndurance();
 				Strength = TheView.getStrength();
-				Speed = TheView.getSpeed();
+				Speed = TheView.getAgility();
 				Intelligence = TheView.getIntelligence();
+				Charisma = TheView.getCharisma();
+				Wisdom = TheView.getWisdom();
+				Dexterity = TheView.getDexterity();
+				Constituition = TheView.getConstitution(); 
+				Perception = TheView.getPerception();
 				
-				TheModel.upStats(Endurance, Strength, Speed, Intelligence);
+				TheModel.upStats(Endurance, Strength, Speed, Intelligence, Charisma, Wisdom, Dexterity, Constituition, Perception);
 				
 				TheView.StatsNewEnduranceSolution(TheModel.getEndurance());
 				TheView.StatsNewStrengthSolution(TheModel.getStrength());
-				TheView.StatsNewSpeedSolution(TheModel.getSpeed());
+				TheView.StatsNewAgilitySolution(TheModel.getAgility());
 				TheView.StatsNewIntelligenceSolution(TheModel.getIntelligence());
+				TheView.StatsNewCharismaSolution(TheModel.getCharisma());
+				TheView.StatsNewWisdomSolution(TheModel.getWisdom());
+				TheView.StatsNewDexteritySolution(TheModel.getDexterity());
+				TheView.StatsNewConstitutionSolution(TheModel.getConstitution());
+				TheView.StatsNewPerceptionSolution(TheModel.getPerception());
 			}
 			
 			catch(NumberFormatException ex) {

@@ -15,17 +15,38 @@ public class StatsView extends JFrame {
 	private JLabel NewAttributeLevelLabel = new JLabel("New Level:");
 	private JLabel EnduranceLabel = new JLabel("Endurance:");
 	private JTextField Endurance = new JTextField(10);
+	private JTextField NewEndurance = new JTextField(10);
 	private JLabel StrengthLabel = new JLabel("Strength:");
 	private JTextField Strength = new JTextField(10);
-	private JLabel SpeedLabel = new JLabel("Speed:");
-	private JTextField Speed = new JTextField(10);
+	private JTextField NewStrength = new JTextField(10);
+	private JLabel AgilityLabel = new JLabel("Agility:");
+	private JTextField Agility = new JTextField(10);
+	private JTextField NewAgility = new JTextField(10);
 	private JLabel IntelligenceLabel = new JLabel("Intelligence:");
 	private JTextField Intelligence = new JTextField(10);
-	private JButton UpStats = new JButton("Up your Stats!");
-	private JTextField NewEndurance = new JTextField(10);
-	private JTextField NewStrength = new JTextField(10);
-	private JTextField NewSpeed = new JTextField(10);
 	private JTextField NewIntelligence = new JTextField(10);
+	
+	private JLabel CharismaLabel = new JLabel("Charisma:");
+	private JTextField Charisma = new JTextField(10);
+	private JTextField NewCharisma = new JTextField(10);
+	
+	private JLabel WisdomLabel = new JLabel("Wisdom:");
+	private JTextField Wisdom = new JTextField(10);
+	private JTextField NewWisdom = new JTextField(10);
+	
+	private JLabel DexterityLabel = new JLabel("Dexterity:");
+	private JTextField Dexterity = new JTextField(10);
+	private JTextField NewDexterity = new JTextField(10);
+	
+	private JLabel ConstitutionLabel = new JLabel("Constitution:");
+	private JTextField Constitution = new JTextField(10);
+	private JTextField NewConstitution = new JTextField(10);
+	
+	private JLabel PerceptionLabel = new JLabel("Perception:");
+	private JTextField Perception = new JTextField(10);
+	private JTextField NewPerception = new JTextField(10);
+	
+	private JButton UpStats = new JButton("Up your Stats!");
 	//Stats Panel variables
 	
 	private JPanel GuidePanel = new JPanel();
@@ -91,12 +112,27 @@ public class StatsView extends JFrame {
 		StatsPanel.add(StrengthLabel);
 		StatsPanel.add(Strength);
 		StatsPanel.add(NewStrength);
-		StatsPanel.add(SpeedLabel);
-		StatsPanel.add(Speed);
-		StatsPanel.add(NewSpeed);
+		StatsPanel.add(AgilityLabel);
+		StatsPanel.add(Agility);
+		StatsPanel.add(NewAgility);
 		StatsPanel.add(IntelligenceLabel);
 		StatsPanel.add(Intelligence);	
 		StatsPanel.add(NewIntelligence);
+		StatsPanel.add(CharismaLabel);
+		StatsPanel.add(Charisma);
+		StatsPanel.add(NewCharisma);
+		StatsPanel.add(WisdomLabel);
+		StatsPanel.add(Wisdom);
+		StatsPanel.add(NewWisdom);
+		StatsPanel.add(DexterityLabel);
+		StatsPanel.add(Dexterity);
+		StatsPanel.add(NewDexterity);
+		StatsPanel.add(ConstitutionLabel);
+		StatsPanel.add(Constitution);
+		StatsPanel.add(NewConstitution);
+		StatsPanel.add(PerceptionLabel);
+		StatsPanel.add(Perception);
+		StatsPanel.add(NewPerception);
 		StatsPanel.add(UpStats);
 		// add all our JComponents to the Panel
 	}
@@ -144,48 +180,108 @@ public class StatsView extends JFrame {
 		return Integer.parseInt(Endurance.getText());
 	}
 	
-	public int getStrength() {
-		return Integer.parseInt(Strength.getText());
-	}
-	
-	public int getSpeed() {
-		return Integer.parseInt(Speed.getText());
-	}
-	
-	public int getIntelligence() {
-		return Integer.parseInt(Intelligence.getText());
-	}
-	
 	public int getNewEndurance() {
 		return Integer.parseInt(NewEndurance.getText());
-	}
-	
-	public int getNewStrength() {
-		return Integer.parseInt(NewStrength.getText());
-	}
-	
-	public int getNewSpeed() {
-		return Integer.parseInt(NewSpeed.getText());
-	}
-	
-	public int getNewIntelligence() {
-		return Integer.parseInt(NewIntelligence.getText());
 	}
 	
 	public void StatsNewEnduranceSolution(int solution) {
 		NewEndurance.setText(Integer.toString(solution));
 	}
 	
+	public int getStrength() {
+		return Integer.parseInt(Strength.getText());
+	}
+	
+	public int getNewStrength() {
+		return Integer.parseInt(NewStrength.getText());
+	}
+	
 	public void StatsNewStrengthSolution(int solution) {
 		NewStrength.setText(Integer.toString(solution));
 	}
 	
-	public void StatsNewSpeedSolution(int solution) {
-		NewSpeed.setText(Integer.toString(solution));
+	public int getAgility() {
+		return Integer.parseInt(Agility.getText());
+	}
+	
+	public int getNewAgility() {
+		return Integer.parseInt(NewAgility.getText());
+	}
+	
+	public void StatsNewAgilitySolution(int solution) {
+		NewAgility.setText(Integer.toString(solution));
+	}
+	
+	public int getIntelligence() {
+		return Integer.parseInt(Intelligence.getText());
+	}
+	
+	public int getNewIntelligence() {
+		return Integer.parseInt(NewIntelligence.getText());
 	}
 	
 	public void StatsNewIntelligenceSolution(int solution) {
 		NewIntelligence.setText(Integer.toString(solution));
+	}
+	
+	public int getCharisma() {
+		return Integer.parseInt(Charisma.getText());
+	}
+	
+	public int getNewCharisma() {
+		return Integer.parseInt(NewCharisma.getText());
+	}
+	
+	public void StatsNewCharismaSolution(int solution) {
+		NewCharisma.setText(Integer.toString(solution));
+	}
+	
+	public int getWisdom() {
+		return Integer.parseInt(Wisdom.getText());
+	}
+	
+	public int getNewWisdom() {
+		return Integer.parseInt(NewWisdom.getText());
+	}
+	
+	public void StatsNewWisdomSolution(int solution) {
+		NewWisdom.setText(Integer.toString(solution));
+	}
+	
+	public int getDexterity() {
+		return Integer.parseInt(Dexterity.getText());
+	}
+	
+	public int getNewDexterity() {
+		return Integer.parseInt(NewDexterity.getText());
+	}
+	
+	public void StatsNewDexteritySolution(int solution) {
+		NewDexterity.setText(Integer.toString(solution));
+	}
+	
+	public int getConstitution() {
+		return Integer.parseInt(Constitution.getText());
+	}
+	
+	public int getNewConstitution() {
+		return Integer.parseInt(NewConstitution.getText());
+	}
+	
+	public void StatsNewConstitutionSolution(int solution) {
+		NewConstitution.setText(Integer.toString(solution));
+	}
+	
+	public int getPerception() {
+		return Integer.parseInt(Perception.getText());
+	}
+	
+	public int getNewPerception() {
+		return Integer.parseInt(NewPerception.getText());
+	}
+	
+	public void StatsNewPerceptionSolution(int solution) {
+		NewPerception.setText(Integer.toString(solution));
 	}
 	
 	void addButtonListener(ActionListener ListenForUpStatsButton) {

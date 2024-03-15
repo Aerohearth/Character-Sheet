@@ -3,6 +3,7 @@ package stats;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 public class StatsController {
 	
@@ -83,7 +84,8 @@ public class StatsController {
 			}
 			
 			else if(ButtonName.equals("New Skill")) {
-				TheView.add(TheModel.NewSkill());
+				JPanel NewSkill = TheModel.NewSkill();
+				TheView.add(NewSkill);
 				TheView.setVisible(true);
 				
 			}

@@ -1,10 +1,15 @@
 package stats;
 
+import java.awt.Color;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 public class StatsModel {
 	private int Endurance, Strength, Speed, Intelligence, Charisma, Wisdom, Dexterity, Constitution, Perception; //, Speed, Intelligence, MentalStrength, MentalEndurance;
@@ -58,6 +63,14 @@ public class StatsModel {
 		catch (IOException | NumberFormatException e) {
             System.err.println("Error loading file: " + e.getMessage());
         }
+	}
+	
+	public JPanel NewSkill() {
+		JLabel skillName = new JLabel(JOptionPane.showInputDialog("Skill Name:"));
+		JPanel skill = new JPanel();
+		skill.setBackground(Color.lightGray);
+		skill.add(skillName);
+		return skill;
 	}
 	
 	public int getEndurance() {return Endurance;}

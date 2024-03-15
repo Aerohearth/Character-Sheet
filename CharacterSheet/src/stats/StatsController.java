@@ -2,7 +2,6 @@ package stats;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JOptionPane;
 
 public class StatsController {
@@ -69,24 +68,23 @@ public class StatsController {
 			}
 			
 			else if(ButtonName.equals("Load")) {
-				try {
-					String Character = JOptionPane.showInputDialog("Enter your character name");
-					TheModel.Load(Character + ".txt");
-					
-					TheView.StatsNewEnduranceSolution(TheModel.getEndurance());
-					TheView.StatsNewStrengthSolution(TheModel.getStrength());
-					TheView.StatsNewAgilitySolution(TheModel.getAgility());
-					TheView.StatsNewIntelligenceSolution(TheModel.getIntelligence());
-					TheView.StatsNewCharismaSolution(TheModel.getCharisma());
-					TheView.StatsNewWisdomSolution(TheModel.getWisdom());
-					TheView.StatsNewDexteritySolution(TheModel.getDexterity());
-					TheView.StatsNewConstitutionSolution(TheModel.getConstitution());
-					TheView.StatsNewPerceptionSolution(TheModel.getPerception());
-				}
+				String Character = JOptionPane.showInputDialog("Enter your character name");
+				TheModel.Load(Character + ".txt");
 				
-				catch(NumberFormatException ex) {
-					TheView.displayErrorMessage("You need an integer");
-				}
+				TheView.StatsNewEnduranceSolution(TheModel.getEndurance());
+				TheView.StatsNewStrengthSolution(TheModel.getStrength());
+				TheView.StatsNewAgilitySolution(TheModel.getAgility());
+				TheView.StatsNewIntelligenceSolution(TheModel.getIntelligence());
+				TheView.StatsNewCharismaSolution(TheModel.getCharisma());
+				TheView.StatsNewWisdomSolution(TheModel.getWisdom());
+				TheView.StatsNewDexteritySolution(TheModel.getDexterity());
+				TheView.StatsNewConstitutionSolution(TheModel.getConstitution());
+				TheView.StatsNewPerceptionSolution(TheModel.getPerception());
+			}
+			
+			else if(ButtonName.equals("New Skill")) {
+				TheView.add(TheModel.NewSkill());
+				TheView.setVisible(true);
 				
 			}
 		}

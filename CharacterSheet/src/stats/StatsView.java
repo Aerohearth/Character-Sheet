@@ -60,6 +60,7 @@ public class StatsView extends JFrame {
 	//Guide Panel variables
 	
 	private JPanel SkillsPanel = new JPanel();
+	private JButton addSkill = new JButton("New Skill");
 	
 	StatsView(){
 		
@@ -156,6 +157,8 @@ public class StatsView extends JFrame {
 		GridLayout skillsLayout = new GridLayout(0,3);
 		
 		SkillsPanel.setLayout(skillsLayout);
+		
+		SkillsPanel.add(addSkill);
 	}
 	
 	public void createGuidePanel() {
@@ -273,7 +276,7 @@ public class StatsView extends JFrame {
 	}
 	
 	public void setSkillsPanel() {
-		this.setContentPane(StatsPanel);
+		this.setContentPane(SkillsPanel);
 		this.StatsPanel.setVisible(false);
 		this.GuidePanel.setVisible(false);
 		this.SkillsPanel.setVisible(true);
@@ -362,6 +365,7 @@ public class StatsView extends JFrame {
 		UpStats.addActionListener(ListenForUpStatsButton);
 		SaveStats.addActionListener(ListenForUpStatsButton);
 		LoadStats.addActionListener(ListenForUpStatsButton);
+		addSkill.addActionListener(ListenForUpStatsButton);
 	}
 	
 	void displayErrorMessage(String errorMessage) {

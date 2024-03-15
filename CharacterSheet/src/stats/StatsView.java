@@ -154,9 +154,9 @@ public class StatsView extends JFrame {
 	}
 	
 	public void createSkillPanel() {
-		GridLayout skillsLayout = new GridLayout(0,3);
+		//GridLayout skillsLayout = new GridLayout(0,2);
 		
-		SkillsPanel.setLayout(skillsLayout);
+		//SkillsPanel.setLayout(skillsLayout);
 		
 		SkillsPanel.add(addSkill);
 	}

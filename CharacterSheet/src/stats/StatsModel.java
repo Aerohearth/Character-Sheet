@@ -7,6 +7,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -68,8 +69,9 @@ public class StatsModel {
 	public JPanel NewSkill() {
 		JLabel skillName = new JLabel(JOptionPane.showInputDialog("Skill Name:"));
 		JPanel skill = new JPanel();
-		skill.setBackground(Color.lightGray);
+		//skill.setBackground(Color.lightGray);
 		skill.add(skillName);
+		skill.setBorder(BorderFactory.createLineBorder(Color.black));
 		return skill;
 	}
 	

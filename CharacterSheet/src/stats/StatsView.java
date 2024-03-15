@@ -57,9 +57,9 @@ public class StatsView extends JFrame {
 	//Stats Panel variables
 	
 	private JPanel GuidePanel = new JPanel();
-	
-
 	//Guide Panel variables
+	
+	private JPanel SkillsPanel = new JPanel();
 	
 	StatsView(){
 		
@@ -75,6 +75,9 @@ public class StatsView extends JFrame {
 		
 		createGuidePanel();
 		// set and create the Panel that shows the Guide 
+		
+		createSkillPanel();
+		// set and create the Panel that shows the characters skills
 		
 		setStatsPanel();
 		// set the stats Panel as the first thing that pops up
@@ -93,6 +96,11 @@ public class StatsView extends JFrame {
 			sheetMenu.addSeparator();
 		   
 			item = new JMenuItem("Guide");
+			item.addActionListener(mh);
+			sheetMenu.add(item);
+			sheetMenu.addSeparator();
+			
+			item = new JMenuItem("Skills");
 			item.addActionListener(mh);
 			sheetMenu.add(item);
 		   
@@ -142,6 +150,12 @@ public class StatsView extends JFrame {
 		StatsPanel.add(SaveStats);
 		StatsPanel.add(LoadStats);
 		// add all our JComponents to the Panel
+	}
+	
+	public void createSkillPanel() {
+		GridLayout skillsLayout = new GridLayout(0,3);
+		
+		SkillsPanel.setLayout(skillsLayout);
 	}
 	
 	public void createGuidePanel() {
@@ -244,6 +258,9 @@ public class StatsView extends JFrame {
 			else if (menuName.equals("Guide")) {
 				setGuidePanel();
 			}
+			else if (menuName.equals("Skills")) {
+				setSkillsPanel();
+			}
 		
 		}
 	}
@@ -252,12 +269,21 @@ public class StatsView extends JFrame {
 		this.setContentPane(StatsPanel);
 		this.StatsPanel.setVisible(true);
 		this.GuidePanel.setVisible(false);
+		this.SkillsPanel.setVisible(false);
+	}
+	
+	public void setSkillsPanel() {
+		this.setContentPane(StatsPanel);
+		this.StatsPanel.setVisible(false);
+		this.GuidePanel.setVisible(false);
+		this.SkillsPanel.setVisible(true);
 	}
 	
 	public void setGuidePanel() {
 		this.setContentPane(GuidePanel);
 		this.GuidePanel.setVisible(true);
 		this.StatsPanel.setVisible(false);
+		this.SkillsPanel.setVisible(false);
 	}
 	
 	public int getEndurance() {

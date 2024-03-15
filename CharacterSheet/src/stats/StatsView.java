@@ -153,6 +153,8 @@ public class StatsView extends JFrame {
 		// add all our JComponents to the Panel
 	}
 	
+	//store the JLabel then when we load it create Panels for it/ remove other panels if created before loading (reset Panel)
+	
 	public void createSkillPanel() {
 		//GridLayout skillsLayout = new GridLayout(0,2);
 		

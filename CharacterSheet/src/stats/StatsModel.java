@@ -2,6 +2,7 @@ package stats;
 
 import java.awt.Color;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -13,7 +14,9 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class StatsModel {
-	private int Endurance, Strength, Speed, Intelligence, Charisma, Wisdom, Dexterity, Constitution, Perception; //, Speed, Intelligence, MentalStrength, MentalEndurance;
+	private int Endurance, Strength, Speed, Intelligence, Charisma, Wisdom, Dexterity, Constitution, Perception;
+	private File fileDirectory = new File("/Users/aerohearth/git/Character-Sheet/CharacterSheet");
+	private File TempFile;
 
 	//start with something just for me then generalize it for more people
 
@@ -32,6 +35,7 @@ public class StatsModel {
 	}
 	
 	public void Save(String filename) {
+		String SkillName;
 		try(PrintWriter writer = new PrintWriter(new FileWriter(filename))) {
 			writer.println(Endurance);
 			writer.println(Strength);
@@ -42,9 +46,20 @@ public class StatsModel {
 			writer.println(Dexterity);
 			writer.println(Constitution);
 			writer.println(Perception);
+			
+			try (BufferedReader reader = new BufferedReader(new FileReader(TempFile))) {
+				//String name = reader.readLine();
+				SkillName = reader.readLine();
+				writer.println(SkillName);
+			}
+			catch (IOException | NumberFormatException e) {
+	            System.err.println("Error loading file: " + e.getMessage());
+	        }
+			
+			TempFile.delete();
 		}
 		catch (IOException e) {
-			System.err.println("Error saving fiel: " + e.getMessage());
+			System.err.println("Error saving field: " + e.getMessage());
 		}
 	}
 	
@@ -67,12 +82,29 @@ public class StatsModel {
 	}
 	
 	public JPanel NewSkill() {
-		JLabel skillName = new JLabel(JOptionPane.showInputDialog("Skill Name:"));
+		String inputSkill = JOptionPane.showInputDialog("Skill Name:");
+		JLabel skillName = new JLabel(inputSkill);
 		JPanel skill = new JPanel();
-		//skill.setBackground(Color.lightGray);
+		
+		try (PrintWriter writer = new PrintWriter(new FileWriter(TempFile))) {
+			writer.println(inputSkill);
+		}
+		catch (IOException e1) {
+			e1.printStackTrace();
+		}
+		//add skill Label to TempSkill File for saving
+		
 		skill.add(skillName);
 		skill.setBorder(BorderFactory.createLineBorder(Color.black));
 		return skill;
+	}
+	
+	public void createTempFile() {
+		try {
+			TempFile = File.createTempFile("TempSkills", ".txt", fileDirectory);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public int getEndurance() {return Endurance;}

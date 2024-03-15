@@ -2,6 +2,7 @@ package stats;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
@@ -16,6 +17,8 @@ public class StatsController {
 		this.TheModel = TheModel;
 		
 		this.TheView.addButtonListener(new ButtonListener());
+		
+		this.TheModel.createTempFile();
 	}
 
 	
@@ -87,7 +90,6 @@ public class StatsController {
 				JPanel NewSkill = TheModel.NewSkill();
 				TheView.add(NewSkill);
 				TheView.setVisible(true);
-				
 			}
 		}
 		

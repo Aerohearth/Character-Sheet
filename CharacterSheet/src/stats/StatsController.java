@@ -84,6 +84,7 @@ public class StatsController {
 				TheView.StatsNewDexteritySolution(TheModel.getDexterity());
 				TheView.StatsNewConstitutionSolution(TheModel.getConstitution());
 				TheView.StatsNewPerceptionSolution(TheModel.getPerception());
+				
 			}
 			
 			else if(ButtonName.equals("New Skill")) {

@@ -16,39 +16,39 @@ public class StatsView extends JFrame {
 	//private JLabel NewAttributeLevelLabel = new JLabel("New Level:");
 	
 	private JLabel EnduranceLabel = new JLabel("Endurance:");
-	private JLabel Endurance = new JLabel("1");
+	private JLabel Endurance = new JLabel("0");
 	//private JTextField NewEndurance = new JTextField(10); Might use for "/10
 	
 	private JLabel StrengthLabel = new JLabel("Strength:");
-	private JLabel Strength = new JLabel("1");
+	private JLabel Strength = new JLabel("0");
 	//private JTextField NewStrength = new JTextField(10);
 	
 	private JLabel AgilityLabel = new JLabel("Agility:");
-	private JLabel Agility = new JLabel("1");
+	private JLabel Agility = new JLabel("0");
 	//private JTextField NewAgility = new JTextField(10);
 	
 	private JLabel IntelligenceLabel = new JLabel("Intelligence:");
-	private JLabel Intelligence = new JLabel("1");
+	private JLabel Intelligence = new JLabel("0");
 	//private JTextField NewIntelligence = new JTextField(10);
 	
 	private JLabel CharismaLabel = new JLabel("Charisma:");
-	private JLabel Charisma = new JLabel("1");
+	private JLabel Charisma = new JLabel("0");
 	//private JTextField NewCharisma = new JTextField(10);
 	
 	private JLabel WisdomLabel = new JLabel("Wisdom:");
-	private JLabel Wisdom = new JLabel("1");
+	private JLabel Wisdom = new JLabel("0");
 	//private JTextField NewWisdom = new JTextField(10);
 	
 	private JLabel DexterityLabel = new JLabel("Dexterity:");
-	private JLabel Dexterity = new JLabel("1");
+	private JLabel Dexterity = new JLabel("0");
 	//private JTextField NewDexterity = new JTextField(10);
 	
 	private JLabel ConstitutionLabel = new JLabel("Constitution:");
-	private JLabel Constitution = new JLabel("1");
+	private JLabel Constitution = new JLabel("0");
 	//private JTextField NewConstitution = new JTextField(10);
 	
 	private JLabel PerceptionLabel = new JLabel("Perception:");
-	private JLabel Perception = new JLabel("1");
+	private JLabel Perception = new JLabel("0");
 	//private JTextField NewPerception = new JTextField(10);
 	
 	private JButton UpStats = new JButton("Up your Stats!");
@@ -368,6 +368,10 @@ public class StatsView extends JFrame {
 		SaveStats.addActionListener(ListenForUpStatsButton);
 		LoadStats.addActionListener(ListenForUpStatsButton);
 		addSkill.addActionListener(ListenForUpStatsButton);
+	}
+	
+	public void SkillsSolution(String skill) {
+		
 	}
 	
 	void displayErrorMessage(String errorMessage) {

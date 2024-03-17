@@ -17,7 +17,8 @@ public class StatsModel {
 	private int Endurance, Strength, Speed, Intelligence, Charisma, Wisdom, Dexterity, Constitution, Perception;
 	private File fileDirectory = new File("/Users/aerohearth/git/Character-Sheet/CharacterSheet");
 	private File TempFile;
-
+	public int skillCount = 0;
+	public String[] skillArray = new String[5];
 	//start with something just for me then generalize it for more people
 
 
@@ -49,8 +50,10 @@ public class StatsModel {
 			
 			try (BufferedReader reader = new BufferedReader(new FileReader(TempFile))) {
 				//String name = reader.readLine();
-				SkillName = reader.readLine();
-				writer.println(SkillName);
+				for(int i = 0; i <= skillCount; i++) {
+					SkillName = reader.readLine();
+					writer.println(SkillName);
+				}
 			}
 			catch (IOException | NumberFormatException e) {
 	            System.err.println("Error loading file: " + e.getMessage());
@@ -75,6 +78,12 @@ public class StatsModel {
 			Dexterity = Integer.parseInt(reader.readLine());
 			Constitution = Integer.parseInt(reader.readLine());
 			Perception = Integer.parseInt(reader.readLine());
+			for(int i = 0; i <= skillCount; i++) {
+				String Skill = reader.readLine();
+				NewSkillLoad(Skill);
+				
+			}
+			
 		}
 		catch (IOException | NumberFormatException e) {
             System.err.println("Error loading file: " + e.getMessage());
@@ -83,6 +92,35 @@ public class StatsModel {
 	
 	public JPanel NewSkill() {
 		String inputSkill = JOptionPane.showInputDialog("Skill Name:");
+		JLabel skillName = new JLabel(inputSkill);
+		JPanel skill = new JPanel();
+		skillArray[skillCount] = inputSkill;
+		addSkillsToTempFile();
+		skillCount+=1;
+		
+		/*try (PrintWriter writer = new PrintWriter(new FileWriter(TempFile))) {
+			writer.println(inputSkill);
+		}
+		catch (IOException e1) {
+			e1.printStackTrace();
+		}*/
+		//add skill Label to TempSkill File for saving
+		
+		skill.add(skillName);
+		skill.setBorder(BorderFactory.createLineBorder(Color.black));
+		return skill;
+	}
+	
+	/*public void createFile() {
+		try (PrintWriter writer = new PrintWriter(new FileWriter(TempFile))) {
+		}
+		catch (IOException e1) {
+			e1.printStackTrace();
+		}
+	}*/
+	
+	public JPanel NewSkillLoad(String loadSkill) {
+		String inputSkill = loadSkill;
 		JLabel skillName = new JLabel(inputSkill);
 		JPanel skill = new JPanel();
 		
@@ -105,6 +143,18 @@ public class StatsModel {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public void addSkillsToTempFile() {
+			try (PrintWriter writer = new PrintWriter(new FileWriter(TempFile))) {
+				for (int i = 0; i <= skillCount; i++) {
+					writer.println(skillArray[i]);
+				}
+			}
+			catch (IOException e1) {
+				e1.printStackTrace();
+			}
+		
 	}
 	
 	public int getEndurance() {return Endurance;}

@@ -13,6 +13,10 @@ public class MVCStats {
 		theView.setVisible(true);
 	}
 
-}
+} // create a temporary file every time we add a new skill
+/* create a new temp file
+ * read previous file into new file 
+ * add new skill
+ */
 
  

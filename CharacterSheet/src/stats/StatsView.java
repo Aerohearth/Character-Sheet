@@ -15,51 +15,52 @@ public class StatsView extends JFrame {
 	private JLabel AttributeLevelLabel = new JLabel("Level:");
 	//private JLabel NewAttributeLevelLabel = new JLabel("New Level:");
 	
-	private JLabel EnduranceLabel = new JLabel("Endurance:");
+	private JButton EnduranceButton = new JButton("Endurance:");
 	private JLabel Endurance = new JLabel("0");
 	//private JTextField NewEndurance = new JTextField(10); Might use for "/10
 	
-	private JLabel StrengthLabel = new JLabel("Strength:");
+	private JButton StrengthButton = new JButton("Strength:");
 	private JLabel Strength = new JLabel("0");
 	//private JTextField NewStrength = new JTextField(10);
 	
-	private JLabel AgilityLabel = new JLabel("Agility:");
+	private JButton AgilityButton = new JButton("Agility:");
 	private JLabel Agility = new JLabel("0");
 	//private JTextField NewAgility = new JTextField(10);
 	
-	private JLabel IntelligenceLabel = new JLabel("Intelligence:");
+	private JButton IntelligenceButton = new JButton("Intelligence:");
 	private JLabel Intelligence = new JLabel("0");
 	//private JTextField NewIntelligence = new JTextField(10);
 	
-	private JLabel CharismaLabel = new JLabel("Charisma:");
+	private JButton CharismaButton = new JButton("Charisma:");
 	private JLabel Charisma = new JLabel("0");
 	//private JTextField NewCharisma = new JTextField(10);
 	
-	private JLabel WisdomLabel = new JLabel("Wisdom:");
+	private JButton WisdomButton = new JButton("Wisdom:");
 	private JLabel Wisdom = new JLabel("0");
 	//private JTextField NewWisdom = new JTextField(10);
 	
-	private JLabel DexterityLabel = new JLabel("Dexterity:");
+	private JButton DexterityButton = new JButton("Dexterity:");
 	private JLabel Dexterity = new JLabel("0");
 	//private JTextField NewDexterity = new JTextField(10);
 	
-	private JLabel ConstitutionLabel = new JLabel("Constitution:");
+	private JButton ConstitutionButton = new JButton("Constitution:");
 	private JLabel Constitution = new JLabel("0");
 	//private JTextField NewConstitution = new JTextField(10);
 	
-	private JLabel PerceptionLabel = new JLabel("Perception:");
+	private JButton PerceptionButton = new JButton("Perception:");
 	private JLabel Perception = new JLabel("0");
 	//private JTextField NewPerception = new JTextField(10);
 	
 	private JButton UpStats = new JButton("Up your Stats!");
 	private JButton SaveStats = new JButton("Save");
 	private JButton LoadStats = new JButton("Load");
+	private JButton WipeStats = new JButton("Wipe");
 	//Stats Panel variables
 	
 	private JPanel GuidePanel = new JPanel();
 	//Guide Panel variables
 	
-	private JPanel SkillsPanel = new JPanel();
+	public JPanel SkillsPanel = new JPanel();
 	private JButton addSkill = new JButton("New Skill");
 	
 	StatsView(){
@@ -116,40 +117,42 @@ public class StatsView extends JFrame {
 		
 		StatsPanel.setLayout(statsLayout);
 		
+		//setButtonLayout();
 		
 		StatsPanel.add(AttributesLabel);
 		StatsPanel.add(AttributeLevelLabel);
-		//StatsPanel.add(NewAttributeLevelLabel);
-		StatsPanel.add(EnduranceLabel);
+		
+		StatsPanel.add(EnduranceButton);
 		StatsPanel.add(Endurance);
-		//StatsPanel.add(NewEndurance);
-		StatsPanel.add(StrengthLabel);
+		
+		StatsPanel.add(StrengthButton);
 		StatsPanel.add(Strength);
-		//StatsPanel.add(NewStrength);
-		StatsPanel.add(AgilityLabel);
+
+		StatsPanel.add(AgilityButton);
 		StatsPanel.add(Agility);
-		//StatsPanel.add(NewAgility);
-		StatsPanel.add(IntelligenceLabel);
+
+		StatsPanel.add(IntelligenceButton);
 		StatsPanel.add(Intelligence);	
-		//StatsPanel.add(NewIntelligence);
-		StatsPanel.add(CharismaLabel);
+
+		StatsPanel.add(CharismaButton);
 		StatsPanel.add(Charisma);
-		//StatsPanel.add(NewCharisma);
-		StatsPanel.add(WisdomLabel);
+
+		StatsPanel.add(WisdomButton);
 		StatsPanel.add(Wisdom);
-		//StatsPanel.add(NewWisdom);
-		StatsPanel.add(DexterityLabel);
+		
+		StatsPanel.add(DexterityButton);
 		StatsPanel.add(Dexterity);
-		//StatsPanel.add(NewDexterity);
-		StatsPanel.add(ConstitutionLabel);
+
+		StatsPanel.add(ConstitutionButton);
 		StatsPanel.add(Constitution);
-		//StatsPanel.add(NewConstitution);
-		StatsPanel.add(PerceptionLabel);
+
+		StatsPanel.add(PerceptionButton);
 		StatsPanel.add(Perception);
-		//StatsPanel.add(NewPerception);
+
 		StatsPanel.add(UpStats);
 		StatsPanel.add(SaveStats);
 		StatsPanel.add(LoadStats);
+		StatsPanel.add(WipeStats);
 		// add all our JComponents to the Panel
 	}
 	
@@ -291,6 +294,19 @@ public class StatsView extends JFrame {
 		this.SkillsPanel.setVisible(false);
 	}
 	
+	/*public void setButtonLayout() {
+		EnduranceButton.setPreferredSize(new Dimension(4, 4));
+		StrengthButton.setPreferredSize(new Dimension(40, 40));
+		AgilityButton.setPreferredSize(new Dimension(40, 40));
+		IntelligenceButton.setPreferredSize(new Dimension(40, 40));
+		CharismaButton.setPreferredSize(new Dimension(40, 40));
+		WisdomButton.setPreferredSize(new Dimension(40, 40));
+		DexterityButton.setPreferredSize(new Dimension(40, 40));
+		ConstitutionButton.setPreferredSize(new Dimension(40, 40));
+		PerceptionButton.setPreferredSize(new Dimension(40, 40));
+		UpStats.setPreferredSize(new Dimension(4,4));
+	}*/
+	
 	public int getEndurance() {
 		return Integer.parseInt(Endurance.getText());
 	}
@@ -368,6 +384,16 @@ public class StatsView extends JFrame {
 		SaveStats.addActionListener(ListenForUpStatsButton);
 		LoadStats.addActionListener(ListenForUpStatsButton);
 		addSkill.addActionListener(ListenForUpStatsButton);
+		EnduranceButton.addActionListener(ListenForUpStatsButton);
+		StrengthButton.addActionListener(ListenForUpStatsButton);
+		AgilityButton.addActionListener(ListenForUpStatsButton);
+		IntelligenceButton.addActionListener(ListenForUpStatsButton);
+		CharismaButton.addActionListener(ListenForUpStatsButton);
+		WisdomButton.addActionListener(ListenForUpStatsButton);
+		DexterityButton.addActionListener(ListenForUpStatsButton);
+		ConstitutionButton.addActionListener(ListenForUpStatsButton);
+		PerceptionButton.addActionListener(ListenForUpStatsButton);
+		WipeStats.addActionListener(ListenForUpStatsButton);
 	}
 	
 	public void SkillsSolution(String skill) {
